@@ -24,7 +24,6 @@ export class SearchComponent implements OnInit {
   getUserDetails() {
     this.disabled = true;
     this.gitHubService.getUserRepositories(this.userName.value).subscribe((result: Repository[]) => {
-      this.disabled = false;
       // navigate to the UserDetailComponent when Array<Repository> is received, pass the data using `queryParams`
       this.router.navigate(['/user-detail'],
         {

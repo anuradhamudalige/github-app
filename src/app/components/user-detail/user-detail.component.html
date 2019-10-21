@@ -1,22 +1,31 @@
-<p>{{username}}</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{username}}</mat-card-title>
+    <mat-card-subtitle>Github Username</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
 <mat-divider></mat-divider>
 <table style="width:100%">
   <tr>
     <td class="left-cell">
-      <mat-radio-group class="radio-group" [(ngModel)]="_selectedRepo">
-      <mat-radio-button class="radio-button" *ngFor="let repo of _repoDetails" [value]="repo">
-        {{repo.name}}
-      </mat-radio-button>
-    </mat-radio-group>
+      <mat-card>
+        <mat-radio-group class="radio-group" [(ngModel)]="_selectedRepo">
+          <mat-radio-button class="radio-button" *ngFor="let repo of _repoDetails" [value]="repo">
+            {{repo.name}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </mat-card>
     </td>
     <td class="right-cell">
       <!--Render ReadME.md on the same view for the selected repository-->
-      <div *ngIf="_selectedRepo?.appendedUrl">
-        <app-readme-viewer [appender]="_selectedRepo?.appendedUrl"></app-readme-viewer>
-      </div>
-      <div *ngIf="!_selectedRepo">
-        <p>Please select a repository</p>
-      </div>
+      <mat-card>
+        <div *ngIf="_selectedRepo?.appendedUrl">
+          <app-readme-viewer [appender]="_selectedRepo?.appendedUrl"></app-readme-viewer>
+        </div>
+        <div *ngIf="!_selectedRepo">
+          <p>Please select a repository</p>
+        </div>
+      </mat-card>
     </td>
   </tr>
 </table>
