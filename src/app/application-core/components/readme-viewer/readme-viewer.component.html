@@ -1,0 +1,10 @@
+<ng-template *ngIf="hasErrors; then error else markdown"></ng-template>
+
+<ng-template #markdown>
+  <markdown [src]="_url"></markdown>
+</ng-template>
+<ng-template #error>
+  <p>No ReadMe found</p>
+</ng-template>
+
+<!--<markdown [src]="(_url$ | async)?.download_url"></markdown>-->

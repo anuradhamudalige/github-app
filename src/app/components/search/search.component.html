@@ -1,0 +1,9 @@
+<form class="search-form">
+  <mat-form-field class="input-field">
+    <input matInput placeholder="GitHub user name" [disabled]="disabled" [formControl]="userName" name="userName" (keypress)="onChange()"/>
+    <button name="btn-send" mat-button *ngIf="userName.value" matSuffix mat-icon-button aria-label="Send" (click)="getUserDetails()">
+      <mat-icon>send</mat-icon>
+    </button>
+    <mat-error>{{errorMessage}}</mat-error>
+  </mat-form-field>
+</form>
