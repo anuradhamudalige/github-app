@@ -45,6 +45,7 @@ describe('ReadmeViewerComponent', () => {
     });
     component.update();
     expect(component.hasErrors).toBeFalsy();
+    expect(component._url).toContain('some-random-url');
   });
 
   it('should set error when service return the no data', () => {
